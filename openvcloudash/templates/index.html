@@ -10,12 +10,12 @@
 <div class="row">
 {% for status in statusses %}
 <div class="col s6 m2">
-<div class="card lighten-1 {{"green" if status.status in ["RUNNING", "OK"] else "red"}}">
+<div class="card lighten-1 {{colormap[status.status]}}">
     <div class="card-content white-text">
         <span class="card-title">{{status.name}}</span>
         <p>{{status.status}}</p>
     </div>
-    <div class="card-action {{"green" if status.status in ["RUNNING", "OK"] else "red"}} grey-text">
+    <div class="card-action {{colormap[status.status]}} grey-text">
         <a href="{{status.url}}/grid/Status Overview">Status Overview</a>
     </div>
 </div>
