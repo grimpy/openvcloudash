@@ -55,4 +55,4 @@ class Client(BaseResource):
         session = requests.Session()
         url = "%s/%s" % (baseurl, '/restmachine')
         super().__init__(session, url)
-        self.cloudapi.users.authenticate(username=login, password=password)
+        self.system.usermanager.authenticate(name=login, secret=password)
